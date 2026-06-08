@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.tareasistema.HelloController"
+            style="-fx-background-color: linear-gradient(to right,#E8DFF5,#FCE1E4);
+                   -fx-font-family:'Consolas';">
+
+    <top>
+
+        <VBox alignment="CENTER"
+              spacing="5"
+              style="-fx-padding:20;">
+
+            <Label text="SISTEMA ESTUDIANTIL"
+                   style="-fx-font-size:30px;
+                          -fx-font-family:'Courier New';
+                          -fx-font-weight:bold;
+                          -fx-text-fill:#6D597A;"/>
+
+            <Label text="Encuesta + Calculadora Matemática"
+                   style="-fx-font-size:14px;
+                          -fx-text-fill:#9A8C98;"/>
+
+        </VBox>
+
+    </top>
+
+    <center>
+
+        <HBox spacing="25"
+              alignment="CENTER">
+
+            <padding>
+                <Insets top="20"
+                        right="20"
+                        bottom="20"
+                        left="20"/>
+            </padding>
+
+            <!-- ENCUESTA -->
+
+            <VBox spacing="10"
+                  prefWidth="420"
+                  style="-fx-background-color:#FFF7F0;
+                         -fx-background-radius:15;
+                         -fx-border-radius:15;
+                         -fx-border-color:#CDB4DB;
+                         -fx-border-width:2;
+                         -fx-padding:20;">
+
+                <Label text="ENCUESTA ESTUDIANTIL"
+                       style="-fx-font-size:18px;
+                              -fx-font-weight:bold;"/>
+
+                <Separator/>
+
+                <Label text="Nombre"/>
+                <TextField fx:id="txtNombre"
+                           promptText="Ingrese su nombre"/>
+
+                <Label text="Edad"/>
+                <TextField fx:id="txtEdad"
+                           promptText="Ingrese su edad"/>
+
+                <Label text="Carrera"/>
+                <ComboBox fx:id="cmbCarrera"/>
+
+                <Label text="Materias Favoritas"/>
+                <ListView fx:id="listMaterias"
+                          prefHeight="180"/>
+
+                <HBox spacing="10">
+
+                    <Button text="Registrar"
+                            onAction="#registrarEncuesta"
+                            style="-fx-background-color:#BDE0FE;
+                                   -fx-background-radius:10;
+                                   -fx-font-weight:bold;"/>
+
+                    <Button text="Limpiar"
+                            onAction="#limpiarEncuesta"
+                            style="-fx-background-color:#FFC8DD;
+                                   -fx-background-radius:10;
+                                   -fx-font-weight:bold;"/>
+
+                </HBox>
+
+                <Label fx:id="lblEncuesta"
+                       style="-fx-text-fill:green;
+                              -fx-font-weight:bold;"/>
+
+            </VBox>
+
+            <!-- CALCULADORA -->
+
+            <VBox spacing="10"
+                  prefWidth="420"
+                  style="-fx-background-color:#F7F7FF;
+                         -fx-background-radius:15;
+                         -fx-border-radius:15;
+                         -fx-border-color:#A2D2FF;
+                         -fx-border-width:2;
+                         -fx-padding:20;">
+
+                <Label text="CALCULADORA"
+                       style="-fx-font-size:18px;
+                              -fx-font-weight:bold;"/>
+
+                <Separator/>
+
+                <Label text="Número 1"/>
+                <TextField fx:id="txtNumero1"/>
+
+                <Label text="Número 2"/>
+                <TextField fx:id="txtNumero2"/>
+
+                <Label text="Operación"/>
+                <ComboBox fx:id="cmbOperacion"/>
+
+                <Label text="Resultado"/>
+                <TextField fx:id="txtResultado"/>
+
+                <HBox spacing="10">
+
+                    <Button text="Calcular"
+                            onAction="#calcular"
+                            style="-fx-background-color:#CDB4DB;
+                                   -fx-background-radius:10;
+                                   -fx-font-weight:bold;"/>
+
+                    <Button text="Limpiar"
+                            onAction="#limpiarCalculo"
+                            style="-fx-background-color:#FFC8DD;
+                                   -fx-background-radius:10;
+                                   -fx-font-weight:bold;"/>
+
+                </HBox>
+
+                <Label text="Historial de Operaciones"
+                       style="-fx-font-size:15px;
+                              -fx-font-weight:bold;"/>
+
+                <ListView fx:id="listHistorial"
+                          prefHeight="150"/>
+
+                <Button text="Borrar Historial"
+                        onAction="#borrarHistorial"
+                        style="-fx-background-color:#FFB4A2;
+                               -fx-background-radius:10;
+                               -fx-font-weight:bold;"/>
+
+            </VBox>
+
+        </HBox>
+
+    </center>
+
+</BorderPane>
